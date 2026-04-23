@@ -4,16 +4,23 @@ public class DynamicStringList implements StringList{
     String[] data;
 
     public String get(int index){
-        
+        if(index>=size || index<0) throw new IndexOutOfBoundsException("The Index is invalid");
+        return data[index];
     }
 
     public void set(int index, String value){
 
     }
-
+    //Hopefully good
     public void add(String value){
         if(!(capacity()-size()>0)){
-            //double our array size
+            String[] old = data.clone();
+            capacity = capacity*2;
+
+            data = new String[capacity];
+            for(int i = 0; i<old.length;i++){
+                data[i]=old[i];
+            }
         }
 
         //add the value to the index of size
