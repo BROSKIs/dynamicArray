@@ -1,17 +1,28 @@
 public class DynamicStringList implements StringList{
-    int size;
-    int capacity;
-    String[] data;
-
+    private int size;
+    private int capacity;
+    private String[] data;
+    //constructor
+    public DynamicStringList(){
+        size = 0;
+        capacity = 10;
+        data = new String[capacity];
+    }
+    //Should be good
+    @Override
     public String get(int index){
         if(index>=size || index<0) throw new IndexOutOfBoundsException("The Index is invalid");
         return data[index];
-    }
-
+    }   
+    //Should be good
+    @Override
     public void set(int index, String value){
-
+        if(index>=size || index<0) throw new IndexOutOfBoundsException("The Index is invalid");
+        data[index] = value;
     }
+
     //Hopefully good
+    @Override
     public void add(String value){
         if(!(capacity()-size()>0)){
             String[] old = data.clone();
@@ -30,21 +41,18 @@ public class DynamicStringList implements StringList{
         //size++
     }
 
+    @Override
     public String remove(int index){
-
+        
     }
 
+    @Override
     public int size(){
         return size;
     }
 
+    @Override
     public int capacity(){
         return capacity;
-    }
-
-    public static void main(String[] args){
-        size = 0;
-        capacity = 10;
-        data = new String[capacity];
     }
 }
