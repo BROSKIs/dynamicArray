@@ -43,7 +43,15 @@ public class DynamicStringList implements StringList{
 
     @Override
     public String remove(int index){
-        
+        String r = data[index];
+        for(int i = index;i<=size;i++){
+            data[i]=data[i+1];
+        }
+        // set the value fo the removed to the value of the one infront
+        //do that to every element untill we hit size.
+
+        size--;
+         return r;
     }
 
     @Override
