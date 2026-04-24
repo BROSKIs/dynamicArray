@@ -8,37 +8,32 @@ public class DynamicStringList implements StringList{
         capacity = 10;
         data = new String[capacity];
     }
-    //Should be good
+
     @Override
     public String get(int index){
         if(index>=size || index<0) throw new IndexOutOfBoundsException("The Index is invalid");
         return data[index];
     }   
-    //Should be good
+
     @Override
     public void set(int index, String value){
         if(index>=size || index<0) throw new IndexOutOfBoundsException("The Index is invalid");
         data[index] = value;
     }
 
-    //Hopefully good
     @Override
     public void add(String value){
         if(!(capacity()-size()>0)){
             String[] old = data.clone();
-            capacity = capacity*2;
+            capacity = capacity*2; //double capacity
 
             data = new String[capacity];
             for(int i = 0; i<old.length;i++){
                 data[i]=old[i];
             }
         }
-
-        //add the value to the index of size
-        data[size] = value;
-
+        data[size] = value; //add the value to the index of size
         size++;
-        //size++
     }
 
     @Override
@@ -47,11 +42,8 @@ public class DynamicStringList implements StringList{
         for(int i = index;i<=size;i++){
             data[i]=data[i+1];
         }
-        // set the value fo the removed to the value of the one infront
-        //do that to every element untill we hit size.
-
         size--;
-         return r;
+        return r;
     }
 
     @Override

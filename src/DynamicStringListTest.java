@@ -3,28 +3,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DynamicStringListTest {
    
-  //public String get(int index);
-    @Test
-    void testGetFunction() {
-        //arrange
-        DynamicStringList theList =new DynamicStringList();
-        theList.add("Hey");
-        theList.add(", ");
-        theList.add("Hello ");
-        theList.add("there");
-        theList.add(". ");
-        //act
-        String actual = theList.get(0);
-        
-        //asert
-        assertEquals("Hey", actual);
-    }
-
-  //public void set(int index, String value);
   @Test
-    void testSetFunction() {
+  void testGetFunctionGetsCorrectIndex() {
+      //arrange
+      DynamicStringList theList = new DynamicStringList();
+      theList.add("Hey");
+      theList.add(", ");
+      theList.add("Hello ");
+      theList.add("there");
+      theList.add(". ");
+      //act
+      String actual = theList.get(0);
+      
+      //asert
+      assertEquals("Hey", actual);
+  }
+
+  @Test
+    void testSetFunctionSetsValueAtIndex() {
         //arrange
-        DynamicStringList theList =new DynamicStringList();
+        DynamicStringList theList = new DynamicStringList();
         theList.add("Hey");
         theList.add(", ");
         theList.add("Hello ");
@@ -39,11 +37,10 @@ public class DynamicStringListTest {
         assertEquals("... ", actual);
     }
 
-  //public void add(String value);
   @Test
-    void testAddFunction() {
+    void testAddFunctionAddsValueToEnd() {
         //arrange
-        DynamicStringList theList =new DynamicStringList();
+        DynamicStringList theList = new DynamicStringList();
         theList.add("Hey");
         theList.add(", ");
         theList.add("Hello ");
@@ -57,11 +54,11 @@ public class DynamicStringListTest {
         //asert
         assertEquals("The end", actual);
     }
-  //public String remove(int index);
+
     @Test
-    void testRemoveFunction() {
+    void testRemoveFunctionRemoveElementAtIndex() {
         //arrange
-        DynamicStringList theList =new DynamicStringList();
+        DynamicStringList theList = new DynamicStringList();
         theList.add("Hey");
         theList.add(", ");
         theList.add("Hello ");
@@ -75,11 +72,11 @@ public class DynamicStringListTest {
         //asert
         assertEquals("there", actual);
     }
-  //public int size();
+
     @Test
-    void testSizeFunction() {
+    void testSizeFunctionShowsArraySize() {
         //arrange
-        DynamicStringList theList =new DynamicStringList();
+        DynamicStringList theList = new DynamicStringList();
         theList.add("Hey");
         theList.add(", ");
         theList.add("Hello ");
@@ -92,11 +89,11 @@ public class DynamicStringListTest {
         //asert
         assertEquals(5, actual);
     }
-  //public int capacity();
+
     @Test
-    void testCapacityFunction() {
+    void testCapacityFunctionShowsArrayCapacity() {
         //arrange
-        DynamicStringList theList =new DynamicStringList();
+        DynamicStringList theList = new DynamicStringList();
         theList.add("Hey");
         theList.add(", ");
         theList.add("Hello ");
