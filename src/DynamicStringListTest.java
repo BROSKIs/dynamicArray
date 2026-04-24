@@ -1,19 +1,8 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assumptions.abort;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DynamicStringListTest {
-      /**
-   * Retrieves the string at the specified index in the list.
-   *
-   * @param index the index of the string to retrieve.
-   * @return the string at the specified index.
-   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
-   */
+   
   //public String get(int index);
     @Test
     void testGetFunction() {
@@ -31,16 +20,6 @@ public class DynamicStringListTest {
         assertEquals("Hey", actual);
     }
 
-    
-
-
-  /**
-   * Replaces the string at the specified index with the given value.
-   *
-   * @param index the index of the string to replace.
-   * @param value the new value to set at the specified index.
-   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
-   */
   //public void set(int index, String value);
   @Test
     void testSetFunction() {
@@ -60,13 +39,7 @@ public class DynamicStringListTest {
         assertEquals("... ", actual);
     }
 
-  /**
-   * Adds a new string to the end of the list.
-   *
-   * @param value the string to add to the list.
-   */
   //public void add(String value);
-
   @Test
     void testAddFunction() {
         //arrange
@@ -84,13 +57,6 @@ public class DynamicStringListTest {
         //asert
         assertEquals("The end", actual);
     }
-  /**
-   * Removes the string at the specified index from the list.
-   *
-   * @param index the index of the string to remove.
-   * @return the string that was removed.
-   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
-   */
   //public String remove(int index);
     @Test
     void testRemoveFunction() {
@@ -109,11 +75,6 @@ public class DynamicStringListTest {
         //asert
         assertEquals("there", actual);
     }
-  /**
-   * Returns the number of strings currently in the list.
-   *
-   * @return the size of the list.
-   */
   //public int size();
     @Test
     void testSizeFunction() {
@@ -131,11 +92,6 @@ public class DynamicStringListTest {
         //asert
         assertEquals(5, actual);
     }
-  /**
-   * Returns the current capacity of the list (i.e., the number of elements it can hold before resizing).
-   *
-   * @return the capacity of the list.
-   */
   //public int capacity();
     @Test
     void testCapacityFunction() {
@@ -151,6 +107,6 @@ public class DynamicStringListTest {
         int actual = theList.capacity();
         
         //asert
-        assertEquals(1, actual);
+        assertEquals(10, actual);
     }
 }
